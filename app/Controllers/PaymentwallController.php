@@ -17,8 +17,8 @@ class PingbackController
     {
         require_once(dirname(__FILE__) . '../../Framework/Gateway/paymentwall.php');
         Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
-        Paymentwall_Base::setAppKey('de07078e774b9d6c32dbbc6971d776d3');
-        Paymentwall_Base::setSecretKey('46eba02f97a263302d8ac9288c6fbc5d');
+        Paymentwall_Base::setAppKey('');
+        Paymentwall_Base::setSecretKey('');
         $pingback = new Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
 
         if ($pingback->validate()) 
