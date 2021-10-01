@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"database": "panel",
+				"driver": "MySQL",
+				"mysqlOptions": {
+					"authProtocol": "default"
+				},
+				"name": "panel",
+				"port": 3306,
+				"previewLimit": 50,
+				"server": "localhost",
+				"username": "root",
+				"password": ""
+			}
+		]
+	}
+}
