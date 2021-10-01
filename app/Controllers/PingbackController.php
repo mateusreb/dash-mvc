@@ -21,8 +21,8 @@ class PingbackController
 
         require_once(dirname(__FILE__) . '../../Framework/Gateway/paymentwall.php');
         Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
-        Paymentwall_Base::setAppKey('de07078e774b9d6c32dbbc6971d776d3');
-        Paymentwall_Base::setSecretKey('46eba02f97a263302d8ac9288c6fbc5d');
+        Paymentwall_Base::setAppKey('');
+        Paymentwall_Base::setSecretKey('');
         $pingback = new Paymentwall_Pingback($_GET, $_SERVER['REMOTE_ADDR']);
         if ($pingback->validate()) 
         {
@@ -83,8 +83,8 @@ class PingbackController
 
     public function payssion()
     {
-        $Request = new Request();       // live_5f4f8d1c109eb066  1eef6a02fdc2b6ff50b3051eea9ac718
-        $sig = md5(implode('|', array('live_5f4f8d1c109eb066', $Request->input('pm_id'), $Request->input('amount'), $Request->input('currency'), $Request->input('order_id'), $Request->input('state'), '1eef6a02fdc2b6ff50b3051eea9ac718')));
+        $Request = new Request();    
+        $sig = md5(implode('|', array('live_', $Request->input('pm_id'), $Request->input('amount'), $Request->input('currency'), $Request->input('order_id'), $Request->input('state'), '')));
         Reports::registerPingBack('Payssion', json_encode($_POST));
         if ($sig == $Request->input('notify_sig')) 
         {             
