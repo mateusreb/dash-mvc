@@ -11,7 +11,7 @@ class Paymentwall
     {
         require_once(dirname(__FILE__) . '../../Framework/Gateway/paymentwall.php');
         Paymentwall_Base::setApiType(Paymentwall_Base::API_GOODS);
-        Paymentwall_Base::setSecretKey('1dbaff5f05ace9c26b9fbf42facf1005');        
+        Paymentwall_Base::setSecretKey('');        
         $delivery = new Paymentwall_GenerericApiObject('delivery');
         $response = $delivery->post(array(
             'payment_id' => $payment_id,         
